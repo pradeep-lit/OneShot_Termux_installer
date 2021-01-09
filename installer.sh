@@ -3,7 +3,8 @@ architecture=""
 case $(uname -m) in
     armv7*)   architecture="arm" ;;
     aarch64)   architecture="aarch64" ;;
-    *)   printf "The architecture of your CPU is not supported. Please build required binaries from the sources: https://github.com/drygdryg/OneShot#termux"; exit
+    armv8l)   architecture="aarch64" ;;
+    *)   printf "The architecture of your CPU is not supported. Please build required binaries from the sources: https://github.com/drygdryg/OneShot#termux\n"; exit
 esac
 pkg install -y root-repo 
 pkg install -y wget tsu python wpa-supplicant iw
