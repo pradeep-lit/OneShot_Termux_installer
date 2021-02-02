@@ -7,14 +7,13 @@ case $(uname -m) in
     *)   printf "The architecture of your CPU is not supported. Please build required binaries from the sources: https://github.com/drygdryg/OneShot#termux\n"; exit
 esac
 pkg install -y root-repo 
-pkg install -y tsu python wpa-supplicant iw
+pkg install -y git tsu python wpa-supplicant iw
 
 curl https://raw.githubusercontent.com/drygdryg/OneShot_Termux_installer/master/binaries/$architecture/pixiewps -o $PREFIX/bin/pixiewps
 chmod +x $PREFIX/bin/pixiewps
 
-curl -O https://raw.githubusercontent.com/drygdryg/OneShot/master/oneshot.py
-curl -O https://raw.githubusercontent.com/drygdryg/OneShot/master/vulnwsc.txt
+git clone --depth 1 https://github.com/drygdryg/OneShot OneShot
 
-chmod +x ./oneshot.py
+chmod +x OneShot/oneshot.py
 
-printf "#########################################\n# All done! Now you can run OneShot with\n#   sudo python oneshot.py -i wlan0 -K\n#########################################\n"
+printf "###############################################\n#  All done! Now you can run OneShot with\n#   sudo python OneShot/oneshot.py -i wlan0 -K\n#\n#  To update, run\n#   (cd OneShot && git pull)\n###############################################\n"
