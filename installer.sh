@@ -17,4 +17,4 @@ curl -O https://raw.githubusercontent.com/drygdryg/OneShot/master/vulnwsc.txt
 
 chmod +x ./oneshot.py
 
-printf "########################################\n# All done! Now you can run OneShot with\n#        sudo python oneshot.py\n########################################\n"
+printf "#########################################\n# All done! Now you can run OneShot with\n#   sudo python oneshot.py -i wlan0 -K\n#########################################\n"
