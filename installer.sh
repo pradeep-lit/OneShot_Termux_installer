@@ -1,16 +1,6 @@
 #!/data/data/com.termux/files/usr/bin/bash
-architecture=""
-case $(uname -m) in
-    armv7*)   architecture="arm" ;;
-    aarch64)   architecture="aarch64" ;;
-    armv8l)   architecture="aarch64" ;;
-    *)   printf "The architecture of your CPU is not supported. Please build required binaries from the sources: https://github.com/drygdryg/OneShot#termux\n"; exit
-esac
 pkg install -y root-repo 
-pkg install -y git tsu python wpa-supplicant iw
-
-curl https://raw.githubusercontent.com/drygdryg/OneShot_Termux_installer/master/binaries/$architecture/pixiewps -o $PREFIX/bin/pixiewps
-chmod +x $PREFIX/bin/pixiewps
+pkg install -y git tsu python wpa-supplicant pixiewps iw
 
 git clone --depth 1 https://github.com/drygdryg/OneShot OneShot
 
