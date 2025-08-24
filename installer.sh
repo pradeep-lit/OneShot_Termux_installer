@@ -6,4 +6,6 @@ git clone --depth 1 https://github.com/pradeep-lit/OneShot OneShot
 
 chmod +x OneShot/oneshot.py
 
+python -m pip install wcwidth
+
 printf "###############################################\n#  All done! Now you can run OneShot with\n#   sudo python OneShot/oneshot.py -i wlan0 -K\n#\n#  To update, run\n#   (cd OneShot && git pull)\n###############################################\n"
